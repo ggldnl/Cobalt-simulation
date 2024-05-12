@@ -1,11 +1,10 @@
 <?xml version="1.0" ?>
 <robot name="urdf" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-<xacro:include filename="$(find cobalt)/description/urdf/inertia.xacro" />
-<xacro:include filename="$(find cobalt)/description/urdf/materials.xacro" />
-<xacro:include filename="$(find cobalt)/description/urdf/urdf.trans" />
-<xacro:include filename="$(find cobalt)/description/urdf/urdf.gazebo" />
-<xacro:include filename="$(find cobalt)/description/urdf/control.xacro" />
+<xacro:include filename="$(find cobalt_simulation)/description/urdf/inertia.xacro" />
+<xacro:include filename="$(find cobalt_simulation)/description/urdf/materials.xacro" />
+<xacro:include filename="$(find cobalt_simulation)/description/urdf/urdf.gazebo" />
+<xacro:include filename="$(find cobalt_simulation)/description/urdf/control.xacro" />
 
 <!-- Base link -->
 
@@ -18,7 +17,7 @@
     <visual>
         <origin xyz="0 0 ${1.7 * 0.001}" rpy="${pi} 0 0"/>
         <geometry>
-          <mesh filename="file://$(find cobalt)/description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+          <mesh filename="file://$(find cobalt_simulation)/description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
         </geometry>
         <material name="black"/>
     </visual>
@@ -43,7 +42,7 @@
     <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-            <mesh filename="file://$(find cobalt)/description/meshes/battery.stl" scale="0.001 0.001 0.001"/>
+            <mesh filename="file://$(find cobalt_simulation)/description/meshes/battery.stl" scale="0.001 0.001 0.001"/>
         </geometry>
         <material name="black"/>
     </visual>
@@ -70,7 +69,7 @@
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find cobalt)/description/meshes/tire.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find cobalt_simulation)/description/meshes/tire.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="yellow"/>
   </visual>
@@ -98,7 +97,7 @@
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="file://$(find cobalt)/description/meshes/tire.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="file://$(find cobalt_simulation)/description/meshes/tire.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="yellow"/>
   </visual>

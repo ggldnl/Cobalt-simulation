@@ -13,14 +13,14 @@ import os
 
 def generate_launch_description():
 
-    pkg_share = launch_ros.substitutions.FindPackageShare(package='cobalt').find('cobalt')
+    pkg_share = launch_ros.substitutions.FindPackageShare(package='cobalt_simulation').find('cobalt_simulation')
     default_model_path = os.path.join(pkg_share, 'description/urdf/urdf.xacro')
 
     # Eanble finding meshes in gazebo with "package://" in the urdf description
     # This is what gazebo search for:
-    # mesh - model://cobalt/description/meshes/base_link.stl
+    # mesh - model://cobalt_simulation/description/meshes/base_link.stl
     # model path is stored in the GAZEBO_MODEL_PATH environment variable
-    pkg_install_path = get_package_share_directory('cobalt')
+    pkg_install_path = get_package_share_directory('cobalt_simulation')
     pkg_install_path_parent = os.path.dirname(pkg_install_path)
     if 'GAZEBO_MODEL_PATH' in os.environ:
         model_path =  os.environ['GAZEBO_MODEL_PATH'] + ':' + pkg_install_path_parent
@@ -54,7 +54,7 @@ def generate_launch_description():
         executable='spawn_entity.py',
         arguments=[
             '-topic', 'robot_description',
-            '-entity', 'cobalt'           
+            '-entity', 'cobalt_simulation'
         ],
         output='screen'
     )

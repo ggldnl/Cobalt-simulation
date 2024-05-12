@@ -3,7 +3,7 @@ from glob import glob
 import os  
 
 
-package_name = 'cobalt'
+package_name = 'cobalt_simulation'
 
 setup(
     name=package_name,
